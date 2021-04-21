@@ -1,0 +1,200 @@
+/* ----- FONTS ----- */
+@font-face {
+  font-family: "damion";
+  src: url(/fonts/Damion/Damion-Regular.ttf);
+}
+@font-face {
+  font-family: "montserrat";
+  src: url(/fonts/Montserrat/Montserrat-ExtraLight.ttf);
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url(/fonts/Montserrat/Montserrat-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url(/fonts/Montserrat/Montserrat-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url(/fonts/Montserrat/Montserrat-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+/* ----- VARIABLES ----- */
+:root {
+  --primary: #fff;
+  --dark-grey: rgb(41, 41, 41);
+  --tweet: rgb(29, 161, 242);
+}
+
+/* ----- BASE ----- */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/unsplash.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--primary);
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- HEADER ----- */
+.header {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.header h1 {
+  font-family: damion;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 9rem;
+  letter-spacing: 1.5rem;
+  margin-top: 1rem;
+  line-height: 10rem;
+}
+
+/* ----- QUOTE GENERATOR ----- */
+.quote-container {
+  width: auto;
+  max-width: 80rem;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1rem 1rem 1rem rgba(255, 255, 255, 0.2);
+}
+.quote-container .quote-text {
+  font-size: 2.75rem;
+}
+.quote-container .long-quote {
+  font-size: 2rem;
+}
+.quote-container .fa-quote-left {
+  font-size: 3rem;
+}
+.quote-container .quote-author {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+/* ----- QUOTE BUTTONS ----- */
+.button-container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.button-container .twitter-button {
+  font-size: 1.5rem;
+}
+.button-container .twitter-button:hover {
+  color: var(--tweet);
+  transition: 0.1s;
+}
+.button-container #new-quote {
+  font-family: "montserrat";
+  font-weight: 500;
+}
+.button-container button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  color: var(--dark-grey);
+  background-color: var(--primary);
+  padding: 0.5rem 1rem;
+  box-shadow: 0.3rem 0.3rem 0.5rem var(--dark-grey);
+}
+.button-container button:hover {
+  filter: brightness(150%);
+}
+.button-container button:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: 0 0.1rem var(--dark-grey);
+  outline: 0;
+}
+.button-container button:focus, .button-container button:visited {
+  outline: 0;
+}
+
+/* ----- Loader ----- */
+.loader {
+  border: 1.2rem solid #f3f3f3;
+  border-top: 1.2rem solid #333;
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ----- MEDIA QUERIES ----- */
+@media only screen and (max-width: 1000px) {
+  .header h1 {
+    font-size: 8rem;
+  }
+
+  .quote-container {
+    margin: auto 1rem;
+  }
+  .quote-container .quote-text {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header h1 {
+    font-size: 6rem;
+  }
+
+  #loader {
+    border: 1rem solid #f3f3f3;
+    border-top: 1rem solid #333;
+    width: 5rem;
+    height: 5rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
